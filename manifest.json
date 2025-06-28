@@ -1,0 +1,21 @@
+{
+  "name": "Adega Lounge - Sistema de Vendas",
+  "short_name": "Adega Lounge",
+  "start_url": "login.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#880e4f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
