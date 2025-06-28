@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel Funcionário - Adega Lounge</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Painel do Funcionário</h1>
+    <p>Bem-vindo, Funcionário!</p>
+
+    <div class="botoes">
+      <button onclick="window.location.href='./estoque.html'">📦 Consultar Estoque</button>
+      <button onclick="window.location.href='./vendas.html'">💰 Registrar Vendas</button>
+    </div>
+
+    <button onclick="logout()" class="logout">🚪 Sair</button>
+  </div>
+
+  <script type="module">
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { auth, db } from "./js/firebaseConfig.js";
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        window.location.href = "/sistema_de_vendas/login.html";
+        return;
+      }
+
+      const docRef = doc(db, "usuarios", user.uid);
+      const docSnap = await getDoc(docRef);
+
+      if (!docSnap.exists() || docSnap.data().tipo !== "funcionario") {
+        alert("Acesso permitido apenas para funcionários.");
+        window.location.href = "/sistema_de_vendas/admin.html";
+      }
+    });
+  </script>
+
+  <script type="module" src="./js/login.js"></script>
+</body>
+</html>
