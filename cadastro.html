@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro de Usuário - Adega Lounge</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Cadastro de Usuário</h2>
+    <form id="cadastro-form">
+      <input type="text" name="nome" placeholder="Nome completo" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="senha" placeholder="Senha" required />
+      <select name="tipo" required>
+        <option value="">Tipo de usuário</option>
+        <option value="admin">Administrador</option>
+        <option value="funcionario">Funcionário</option>
+      </select>
+      <button type="submit">Cadastrar</button>
+      <p id="msg-cadastro" style="margin-top:10px;"></p>
+    </form>
+
+    <button onclick="window.location.href='./admin.html'" class="logout">⬅ Voltar ao Painel</button>
+  </div>
+
+  <script type="module" src="./js/cadastro.js"></script>
+</body>
+</html>
