@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registrar Venda - Adega Lounge</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>💰 Registrar Venda</h2>
+
+    <form id="venda-form">
+      <select id="produto" required></select>
+      <input type="number" id="quantidade" placeholder="Quantidade" min="1" required />
+      <button type="submit">Registrar Venda</button>
+    </form>
+
+    <h3>Total vendido hoje: R$ <span id="total-dia">0.00</span></h3>
+
+    <button onclick="window.history.back()" class="logout">⬅ Voltar</button>
+  </div>
+
+  <script type="module" src="./js/vendas.js"></script>
+</body>
+</html>
