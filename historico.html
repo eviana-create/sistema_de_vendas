@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Histórico de Vendas - Adega Lounge</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>📜 Histórico de Vendas</h2>
+    <table style="margin-top: 20px; width: 100%;">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Qtd</th>
+          <th>Total</th>
+          <th>Vendedor</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-vendas"></tbody>
+    </table>
+
+    <button onclick="window.history.back()" class="logout">⬅ Voltar</button>
+  </div>
+
+  <script type="module" src="./js/historico.js"></script>
+</body>
+</html>
